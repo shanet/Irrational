@@ -1,3 +1,7 @@
+// shane tully
+// shane@shanetully.com
+// shanetully.com
+//
 // http://en.wikipedia.org/wiki/Machin-like_formula#More_terms
 
 #include "machin.h"

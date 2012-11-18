@@ -1,3 +1,7 @@
+# shane tully
+# shane@shanetully.com
+# shanetully.com
+
 BINARY=irrational
 
 machin:

@@ -1,3 +1,7 @@
+// shane tully
+// shane@shanetully.com
+// shanetully.com
+//
 // http://en.wikipedia.org/wiki/Borwein%27s_algorithm#Cubic_convergence_.281991.29
 
 #include <stdio.h>
