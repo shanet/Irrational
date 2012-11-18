@@ -16,7 +16,7 @@ There are two versions available. The default, target "machin", is multithreaded
 
 ## Usage
 
-For convience, "make test" will calculate pi to ~1,000,000 digits. This should take less than a minute (especially on a multicore processor), or maybe two minutes on older hardware. The program can be directly run by with:
+For convenience, "make test" will calculate pi to ~1,000,000 digits. This should take less than a minute (especially on a multicore processor), or maybe two minutes on older hardware. The program can be directly run by with:
 
     ./irrational [--hide-pi] [precision]
 
@@ -31,8 +31,8 @@ If "--hide-pi" is not requested, pi is output to standard output. The timing and
 Obviously the source code is available for study, but a more detailed discussion of how this works is available at: TODO
 
 ## Support
-This program is a little side project and carries no warranty or support from its author. However, bugs and feature requests may be submitted to the GitHub repo linked to above.
+This program is a little side project and carries no warranty or support from its author. However, bugs and feature requests may be submitted to this GitHub repo.
 
 
 ## Legal
-This program is open source software. It is free to distribute, modify, and use with the exception of it being made closed source or sold for commercial purpose swithout the consent of the author.
+This program is open source software. It is free to distribute, modify, and use with the exception of it being made closed source or sold for commercial purposes without the consent of the author.
