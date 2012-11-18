@@ -22,7 +22,7 @@ For convience, "make test" will calculate pi to ~1,000,000 digits. This should t
 
 Where "--hide-pi" supresses output of pi and precision is the number of correct digits to calculate (default is 1 million).
 
-The program will look for a text file, "pi.txt" to compare the digits of pi it has calculated with known digits to determine precision. If the file does not exist, this step is simply skipped. A text file with the first 1 billion digits of pi can be downloaded at: http://stuff.mit.edu/afs/sipb/contrib/pi/
+The program will look for a text file, "pi.txt", in the same directory as the binary file to compare the digits of pi it has calculated with known digits to determine precision. If the file does not exist, this step is simply skipped. A text file with the first 1 billion digits of pi can be downloaded at: http://stuff.mit.edu/afs/sipb/contrib/pi/
 
 If "--hide-pi" is not requested, pi is output to standard output. The timing and precision output is output to standard error so pi can be redirected to a file if desired.
 
