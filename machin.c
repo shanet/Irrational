@@ -19,9 +19,10 @@ int main(int argc, char **argv) {
     if(argc == 2) {
         if(strcmp(argv[1], "--hide-pi") == 0) {
             hide_pi = 1;
+        } else if((precision = atoi(argv[1])) == 0) {
+            fprintf(stderr, "Invalid precision specified. Aborting.\n");
+            return 1;
         }
-
-        precision = DEFAULT_PRECISION;
     } else if(argc == 3) {
         if(strcmp(argv[1], "--hide-pi") == 0) {
             hide_pi = 1;
@@ -79,8 +80,13 @@ int main(int argc, char **argv) {
     // Check out accurate we are
     unsigned long accuracy = check_digits(pi_str);
 
-    // Print the results
-    if(!hide_pi) printf("%s\n", pi_str);
+    // Print the results (only print the digits that are accurate)
+    if(!hide_pi) {
+        for(unsigned long i=0; i<(unsigned long)precision/3.35; i++) {
+            printf("%c", pi_str[i]);
+        }
+        printf("\n");
+    }
     // Send the time and accuracy to stderr so pi can be redirected to a file if necessary
     fprintf(stderr, "Time: %d seconds\nAccuracy: %lu digits\n", (int)(end_time - start_time), accuracy);
 

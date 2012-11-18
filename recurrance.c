@@ -37,9 +37,10 @@ int main(int argc, char **argv) {
     if(argc == 2) {
         if(strcmp(argv[1], "--hide-pi") == 0) {
             hide_pi = 1;
+        } else if((precision = atoi(argv[1])) == 0) {
+            fprintf(stderr, "Invalid precision specified. Aborting.\n");
+            return 1;
         }
-
-        precision = DEFAULT_PRECISION;
     } else if(argc == 3) {
         if(strcmp(argv[1], "--hide-pi") == 0) {
             hide_pi = 1;
@@ -106,6 +107,8 @@ int main(int argc, char **argv) {
 
     end_time = time(NULL);
 
+    mpfr_clears(tmp1, tmp2, tmp3, s1, s2, r, a1, NULL);
+
     // Write the digits to a string for accuracy comparison
     char *pi = malloc(precision + 100);
     if(pi == NULL) {
@@ -118,12 +121,18 @@ int main(int argc, char **argv) {
     // Check out accurate we are
     unsigned long accuracy = check_digits(pi);
 
-    // Print the results
-    if(!hide_pi) printf("%s\n", pi);
-    // Send the time and accuracy to stderr so pi can be redirected to a file if necessary
+    // Print the results (only print the digits that are accurate)
+    if(!hide_pi) {
+        for(unsigned long i=0; i<(unsigned long)precision/3.35; i++) {
+            printf("%c", pi_str[i]);
+        }
+        printf("\n");
+    }    // Send the time and accuracy to stderr so pi can be redirected to a file if necessary
     fprintf(stderr, "Time: %d seconds\nAccuracy: %lu digits\n", (int)(end_time - start_time), accuracy);
 
-    mpfr_clears(tmp1, tmp2, tmp3, s1, s2, r, a1, a2, NULL);
+    mpfr_clear(a2);
+    free(pi);
+    pi = NULL;
 
     return 0;
 }
