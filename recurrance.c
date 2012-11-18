@@ -123,8 +123,9 @@ int main(int argc, char **argv) {
 
     // Print the results (only print the digits that are accurate)
     if(!hide_pi) {
-        for(unsigned long i=0; i<(unsigned long)precision/3.35; i++) {
-            printf("%c", pi_str[i]);
+        // Plus two for the "3." at the beginning
+        for(unsigned long i=0; i<(unsigned long)(precision/3.35)+2; i++) {
+            printf("%c", pi[i]);
         }
         printf("\n");
     }    // Send the time and accuracy to stderr so pi can be redirected to a file if necessary

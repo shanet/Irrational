@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
 
     // Print the results (only print the digits that are accurate)
     if(!hide_pi) {
-        for(unsigned long i=0; i<(unsigned long)precision/3.35; i++) {
+        for(unsigned long i=0; i<(unsigned long)(precision/3.35)+2; i++) {
             printf("%c", pi_str[i]);
         }
         printf("\n");
