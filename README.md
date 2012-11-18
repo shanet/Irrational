@@ -28,7 +28,7 @@ If "--hide-pi" is not requested, pi is output to standard output. The timing and
 
 ## Internals
 
-Obviously the source code is available for study, but a more detailed discussion of how this works is available at: TODO
+Obviously the source code is available for study, but a more detailed discussion of how this works is available at: http://shanetully.com/2012/11/calculating-pi-to-10000000-digits-with-mpfr-and-threads/
 
 ## Support
 This program is a little side project and carries no warranty or support from its author. However, bugs and feature requests may be submitted to this GitHub repo.
