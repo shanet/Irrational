@@ -50,9 +50,13 @@ int main(int argc, char **argv) {
             fprintf(stderr, "Invalid precision specified. Aborting.\n");
             return 1;
         }
-    } else {
+    }
+
+    // If the precision was not specified, default it
+    if(precision == 0) {
         precision = DEFAULT_PRECISION;
     }
+
 
     // Actual number of correct digits is roughly 3.35 times the requested precision
     precision *= 3.35;
